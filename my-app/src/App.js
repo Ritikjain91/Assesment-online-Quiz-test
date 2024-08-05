@@ -1,19 +1,32 @@
-// App.js
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from './action';
+// src/App.js
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import ProductList from './ProductList';
+import ProductDetail from './ProductDetail';
+import Cart from './Cart';
 
 const App = () => {
-  const counter = useSelector(state => state);
-  const dispatch = useDispatch();
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (item) => {
+    setCart([...cart, item]);
+  };
 
   return (
-    <div>
-      <h1>Counter: {counter}</h1>
-      <button onClick={() => dispatch(increment())}>+</button>
-      <button onClick={() => dispatch(decrement())}>-</button>
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/cart">Cart ({cart.length})</Link>
+        </nav>
+        <Routes>
+          <Route path="/" element={<ProductList addToCart={addToCart} />} />
+          <Route path="/product/:id" element={<ProductDetail addToCart={addToCart} />} />
+          <Route path="/cart" element={<Cart cart={cart} />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
