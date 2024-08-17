@@ -1,11 +1,15 @@
-import React from 'react'
 
-const App = () => {
+import React from 'react';
+import QuizPage from './Pages/QuizPage';
+import CssBaseline from '@mui/material/CssBaseline';
+
+function App() {
   return (
-    <div>
-      
-    </div>
-  )
+    <>
+      <CssBaseline />
+      <QuizPage />
+    </>
+  );
 }
 
-export default App
+export default App;
