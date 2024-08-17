@@ -7,8 +7,8 @@ const QuestionSection = () => {
     <Box>
       <Button fullWidth>
         <Grid container alignItems="center">
-          <Grid item xs={8}>
-            <Typography variant="h5" gutterBottom style={{ color: 'black' }}>
+          <Grid item xs={5}>
+            <Typography variant="h5" sx={{ fontWeight: 'bolder' }} gutterBottom style={{ color: 'black' }}>
               Question 3
             </Typography>
           </Grid>
@@ -20,7 +20,9 @@ const QuestionSection = () => {
                     transform: 'scale(2)', 
                     backgroundColor: "blue", 
                     color: 'white', 
-                    borderRadius: "50px" 
+                    borderRadius: "50px",
+                    marginLeft:"80%" 
+                  
                   }} 
                 />
               </Tooltip>
@@ -73,7 +75,7 @@ const QuestionSection = () => {
         sx={{ width: '100%' }}
       >
         <Button variant="contained" color="success" size="large" sx={{ flexGrow: 1 }}>
-          Save & Next
+        Save & Next
         </Button>
         <Button variant="outlined" size="large" sx={{ flexGrow: 1 }}>
           Clear

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Button, Stack, useMediaQuery, useTheme } from '@mui/material';
+import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 
 const Footer = () => {
   const theme = useTheme();
@@ -15,10 +17,10 @@ const Footer = () => {
       spacing={isMobile ? 2 : 0}
     >
       <Button variant="outlined" size={isMobile ? 'medium' : 'large'}>
-        Back
+     < KeyboardDoubleArrowLeftIcon />  Back
       </Button>
       <Button variant="outlined" size={isMobile ? 'medium' : 'large'}>
-        Next
+      < KeyboardDoubleArrowRightIcon />  Next
       </Button>
       <Button
         variant="contained"
